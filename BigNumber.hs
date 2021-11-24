@@ -2,9 +2,10 @@
 
 -- 2.1
 -- Big Number Defenition
-module BigNumber (BigNumber, scanner, output, somaBN, subBN, mulBN) where
+module BigNumber (BigNumber, scanner, output, somaBN, subBN, mulBN, divBN) where
 import Data.Char
 
+-- CORRIGIR!!!! NÃO FUNCIONA PARA NÚMEROS NEGATIVOS
 type BigNumber = [Int]
 
 -- 2.2
@@ -24,19 +25,19 @@ stringToInt x = read x :: Int
 
 -- somaBN function sums 2 BigNumber
 somaBN :: BigNumber -> BigNumber -> BigNumber
-somaBN a b =  scanner (show (stringToInt(output a) + stringToInt(output a)))
+somaBN a b =  scanner (show (stringToInt(output a) + stringToInt(output b)))
 
 -- 2.5
 -- subBN function substracts 2 BigNumber
 subBN :: BigNumber -> BigNumber -> BigNumber
-subBN a b =  scanner (show (stringToInt(output a) - stringToInt(output a)))
+subBN a b =  scanner (show (stringToInt(output a) - stringToInt(output b)))
 
 -- 2.6
 -- mulBN function multiplies 2 BigNumber
 mulBN :: BigNumber -> BigNumber -> BigNumber
-mulBN a b =  scanner (show (stringToInt(output a) * stringToInt(output a)))
+mulBN a b =  scanner (show (stringToInt(output a) * stringToInt(output b)))
 
 -- 2.7
--- TODO
 -- divBN function divides 2 BigNumber
--- divBN :: BigNumber -> BigNumber -> (BigNumber, BigNumber)
+divBN :: BigNumber -> BigNumber -> (BigNumber, BigNumber)
+divBN a b = (scanner (show (stringToInt(output a) `div` stringToInt(output b))), scanner (show (stringToInt(output a) `mod` stringToInt(output b))))
