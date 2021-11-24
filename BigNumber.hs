@@ -2,7 +2,7 @@
 
 -- 2.1
 -- Big Number Defenition
-module BigNumber (BigNumber, scanner, output, somaBN, subBN, mulBN, divBN) where
+module BigNumber (BigNumber, scanner, output, somaBN, subBN, mulBN, divBN, stringToInt {- aux function -}) where
 import Data.Char
 
 -- CORRIGIR!!!! NÃO FUNCIONA PARA NÚMEROS NEGATIVOS
