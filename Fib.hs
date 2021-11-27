@@ -12,8 +12,6 @@ fibRec a = fibRec(a-1) + fibRec(a-2)
 -- Ex 1.2
 -- CALCULATES FIBONACCI OF ELEMENT N USING LISTS
 -- TODO
--- NÂO ENTENDI O PROBLEMA
-
 
 -- Ex 1.3
 -- CALCULATES FIBONACCI OF ELEMENT N USING INFINITE LISTS
@@ -35,20 +33,31 @@ fibListaInfinita a = (takeListaInfinita (a + 1)) !! a
 fibRecBN :: BigNumber -> BigNumber
 fibRecBN a = scanner(show (fibRec (stringToInt(output a))))
 
--- TODO
 -- fibListaBN :: BigNumber -> BigNumber
+-- TODO
 
 fibListaInfinitaBN :: BigNumber -> BigNumber
 fibListaInfinitaBN a = scanner(show (fibListaInfinita (stringToInt(output a))))
 
 main = do
-  --TESTS
+  --TESTS FIBONACCI
   -- 1.1
   print(fibRec 10)
   -- 1.2
   -- print(fibLista 10)
   -- 1.3
   print(fibListaInfinita 10)
-  -- 3
+  -- 3.
   print(fibRecBN [1, 0])
+  -- print(fibListaBN [1, 0])
   print(fibListaInfinitaBN [1, 0])
+  -- 4.
+  -- INT AND INTEGER TESTS
+  print((minBound, maxBound) :: (Int, Int))
+  print(fibRec 30)
+  -- print(fibLista 30)
+  print(fibListaInfinita 5000)
+  -- BIG NUMBER TESTS
+  print(fibRecBN [3, 0])
+  -- print(fibListaBN [3, 0])
+  print(fibListaInfinitaBN[5, 0, 0, 0])
