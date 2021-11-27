@@ -3,21 +3,22 @@ import BigNumber
 import Data.Char
 
 -- Ex 1.1
--- CALCULO DO ENÉSIMO ELEMENTO
+-- CALCULATES FIBONACCI OF ELEMENT N
 fibRec :: (Integral a) => a-> a
 fibRec 0 = 0
 fibRec 1 = 1
 fibRec a = fibRec(a-1) + fibRec(a-2)
 
 -- Ex 1.2
--- LISTA DE RESULTADOS PARCIAIS
+-- CALCULATES FIBONACCI OF ELEMENT N USING LISTS
 -- TODO
 -- NÂO ENTENDI O PROBLEMA
 
 
 -- Ex 1.3
--- LISTA INFINITA
--- RETORNA O ELEMENTO DE ORDEM N
+-- CALCULATES FIBONACCI OF ELEMENT N USING INFINITE LISTS
+-- ...
+-- INFINTE LIST
 listaInfinita :: Num n => [n]
 listaInfinita = 0 : nxt
     where nxt = 1 : zipWith (+) listaInfinita nxt
@@ -25,6 +26,7 @@ listaInfinita = 0 : nxt
 takeListaInfinita :: Num n => Int -> [n]
 takeListaInfinita = flip take listaInfinita
 
+-- RETURNS ELEMENT OF ORDER N
 fibListaInfinita :: Int -> Int
 fibListaInfinita a = (takeListaInfinita (a + 1)) !! a
 
