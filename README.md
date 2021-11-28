@@ -9,7 +9,8 @@ Exercício 1.1
 > Retorna o elemento de ordem N calculando a soma entre o elemento N-1 e o elemento N-2, chamando assim a função recursivamente até chegar ao caso base, que será o 0 e o 1.
 
 Exercício 1.2
-> TODO
+> A função *fibLista* implementa a sequência de Fibonacci usando listas de resultados parciais.
+> A função cria uma lista inicialmente com os valores 0 e 1 e uma lista com a tail desses valores (todos os elementos, exceto o primeiro). De seguida, combina os elementos das duas listas somando-os e assim, vai criando a sequência de Fibonacci.
 
 Exercício 1.3
 >  A resolução do problema da sequência de Fibonacci usando listas infinitas foi resolvida com a implementação 3 funções:
@@ -17,7 +18,7 @@ Exercício 1.3
 > A primeira função, *listaInfinita*, vai gerar uma lista infinita com a sequência de Fibonacci;
 >
 > No entanto, se simplesmente fizermos *print* da primeira função, a mesma irá estar sempre a gerar novos números.
-> O objetivo seria retornar o o elemento de ordem N, daí o uso da segunda função,  *takeListaInfinita*, que retorna uma lista até esse mesmo elemento;
+> O objetivo seria retornar o elemento de ordem N, daí o uso da segunda função,  *takeListaInfinita*, que retorna uma lista até esse mesmo elemento;
 >
 > Por fim, a terceira função, *fibListaInfinita*, retorna apenas o elemento N.
 
@@ -46,6 +47,6 @@ Exercício 5
 > Por fim, os testes feitos para chegar a estas conclusões estão apresentados no final do ficheiro *Fib.hs*
 
 ### Projeto desenvolvido por:
-> Ana Sofia up+++++
+> Sofia Teixeira up201806629
 >
 > Mónica Pereira up201905753
