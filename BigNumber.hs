@@ -5,18 +5,27 @@
 module BigNumber (BigNumber, scanner, output, somaBN, subBN, mulBN, divBN, safeDiv, stringToInt {- aux function -}) where
 import Data.Char
 
--- CORRIGIR!!!! NÃO FUNCIONA PARA NÚMEROS NEGATIVOS
 type BigNumber = [Int]
 
 -- 2.2
 -- Scanner function converts string into big number
 scanner :: String -> BigNumber
-scanner s = map digitToInt s
+scanner s | s!!0 /= '-' = map digitToInt s
+          {-if negative number-}
+          | otherwise = b-b*2 : map digitToInt a
+          where
+                a = tail (tail s)
+                b = digitToInt (s!!1)
 
 -- 2.3
 -- Output function converts big number into String
 output :: BigNumber -> String
-output b = map intToDigit b
+output b | b!!0 > 0 = map intToDigit b
+         {-if negative number-}
+         | otherwise = '-' : map intToDigit a
+         where
+              c = head b
+              a = c-c*2 : tail b
 
 -- 2.4
 -- converts string to int
