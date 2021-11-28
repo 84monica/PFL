@@ -42,22 +42,36 @@ fibListaInfinitaBN a = scanner(show (fibListaInfinita (stringToInt(output a))))
 main = do
   --TESTS FIBONACCI
   -- 1.1
+  print("fibRec")
   print(fibRec 10)
   -- 1.2
+  print("fibLista")
   print(fibLista 10)
   -- 1.3
+  print("fibListaInfinita")
   print(fibListaInfinita 10)
   -- 3.
+  print("fibRecBN")
   print(fibRecBN [1, 0])
+  print("fibListaBN")
   print(fibListaBN [1, 0])
+  print("fibListaInfinitaBN")
   print(fibListaInfinitaBN [1, 0])
   -- 4.
   -- INT AND INTEGER TESTS
+  print("Bounds Int")
   print((minBound, maxBound) :: (Int, Int))
+  print("fibRec maxBound")
   print(fibRec 30)
+  print("fibLista maxBound")
   print(fibLista 300000)
+  print("fibListaInfinita maxBound")
   print(fibListaInfinita 5000)
   -- BIG NUMBER TESTS
+  print("Big Number implementations")
+  print("fibListaBN maxBound")
   print(fibRecBN [3, 0])
+  print("fibListaBN maxBound")
   print(fibListaBN [3, 0, 0, 0, 0, 0])
+  print("fibListaInfinitaBN maxBound")
   print(fibListaInfinitaBN[5, 0, 0, 0])
