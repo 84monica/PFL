@@ -14,7 +14,6 @@ fibRec a = fibRec(a-1) + fibRec(a-2)
 fibLista n = fibList !! n
 fibList = 0 : 1 : zipWith (+) fibList (tail fibList)
 
-
 -- Ex 1.3
 -- CALCULATES FIBONACCI OF ELEMENT N USING INFINITE LISTS
 -- INFINTE LIST
