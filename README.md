@@ -26,7 +26,8 @@ Exercício 3
 > As funções implementadas no exercício 3 começam por converter o input *BigNumber* introduzidos para *Int* para posteriormente chamar as funções implementadas nos exercícios da alínea 1. Antes de retornar, a função converte o resultado de *Int* outra vez para *BigNumber*.
 
 Exercício 5
-> TODO
+> O exercício 5 acrescenta a capacidade de detetar divisões por zero em compile-time.
+> Quando a função *safeDivBN* recebe como denominador uma lista com um zero, esta imprime *Nothing* no seu resultado em vez do aviso de erro.
 
 ## Estratégia para a implementação das funções do Exercício 2
 > TODO
