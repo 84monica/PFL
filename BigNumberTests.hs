@@ -18,3 +18,6 @@ main = do
   print(mulBN [1, 2, 3] [1, 2, 4])
   -- 2.7
   print(divBN [6, 0] [2, 5])
+  -- 5
+  print(safeDiv [6, 0] [0])
+  

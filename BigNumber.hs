@@ -2,7 +2,7 @@
 
 -- 2.1
 -- Big Number Defenition
-module BigNumber (BigNumber, scanner, output, somaBN, subBN, mulBN, divBN, stringToInt {- aux function -}) where
+module BigNumber (BigNumber, scanner, output, somaBN, subBN, mulBN, divBN, safeDiv, stringToInt {- aux function -}) where
 import Data.Char
 
 -- CORRIGIR!!!! NÃO FUNCIONA PARA NÚMEROS NEGATIVOS
@@ -41,3 +41,9 @@ mulBN a b =  scanner (show (stringToInt(output a) * stringToInt(output b)))
 -- divBN function divides 2 BigNumber
 divBN :: BigNumber -> BigNumber -> (BigNumber, BigNumber)
 divBN a b = (scanner (show (stringToInt(output a) `div` stringToInt(output b))), scanner (show (stringToInt(output a) `mod` stringToInt(output b))))
+
+-- 5
+-- Denominator 0 - maybe
+safeDiv :: BigNumber -> BigNumber -> Maybe(BigNumber, BigNumber)
+safeDiv a b | b /= [0] = Just (divBN a b)
+            | otherwise = Nothing
