@@ -24,4 +24,4 @@ main = do
   -- 2.7
   print(divBN [6, 0] [2, 5])
   -- 5
-  print(safeDiv [6, 0] [0])
+  print(safeDivBN [6, 0] [0])

@@ -1,7 +1,10 @@
 # Trabalho Prático 1 - Programação Funcional e em Lógica
 
 ## Descrição dos testes usados para as funções
-> TODO
+> Neste trabalho fomos testando as funções que criamos utilizando casos significativos. No caso do primeiro exercício do trabalho, estes podem ser encontrados no final do ficheiro Fib.hs. Neste caso, imprimimos o 10º elemento da sequência de Fibonacci, que deverá ser 55 para as três alíneas.
+> No caso do exercício 2, os testes estão no ficheiro BigNumber.hs. Aí é imprimido um caso para cada alínea. No início testamos a função *scanner* que deve converter a string "11111" no BigNumber [1, 1, 1, 1, 1]. De seguida, testamos a função *output* que converte o BigNumber [1, 2, 3, 4] na string "1234". Seguidamente testamos os casos operadores de soma, subtração, multiplicação e de divisão dos BigNumbers sendo que a soma de [1, 2, 3] e [1, 2, 4] deverá dar [2, 4, 7], a subtração entre [1, 2, 4] e [1, 2, 3] deverá ser [1], a multiplicação de [1, 2, 3] e [1, 2, 4] deve ser [1, 5, 2, 5, 2] e a divisão entre [6, 0] e [2, 5] deve ser ([2],[1, 0]). No final, testamos a divisão de [6, 0] para o caso do denominador ser [0], o qual retornou *Nothing*.
+> No exercício 3 testamos as funções criadas no primeiro exercício, para BigNumbers. Assim, para os três casos o resultado deverá ser [5, 5].
+> No exercício 4 os testes realizados são explicados mais ao pormenor na parte do relatório referente a este exercício.
 
 ## Explicação do funcionamento das funções implementadas
 Exercício 1.1
@@ -26,7 +29,8 @@ Exercício 3
 > As funções implementadas no exercício 3 começam por converter o input *BigNumber* introduzidos para *Int* para posteriormente chamar as funções implementadas nos exercícios da alínea 1. Antes de retornar, a função converte o resultado de *Int* outra vez para *BigNumber*.
 
 Exercício 5
-> TODO
+> O exercício 5 acrescenta a capacidade de detetar divisões por zero em compile-time.
+> Quando a função *safeDivBN* recebe como denominador uma lista com um zero, esta imprime *Nothing* no seu resultado em vez do aviso de erro.
 
 ## Estratégia para a implementação das funções do Exercício 2
 > TODO
