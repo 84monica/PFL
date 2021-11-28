@@ -41,7 +41,7 @@ Exercício 5
 >
 >
 > Tendo em conta o que foi dito em cima, e sabendo que não existe propriamente um limite para o tipo de variáveis *Integer*, vamos considerar para este problema números para os quais o *runtime* das funções é aceitável.
-> Posto isto, para a função *fibRec* conseguimos testar números até 30, enquanto que para a *fibListaInfinita* conseguimos até 5000.
+> Posto isto, para a função *fibRec* conseguimos testar números até 30, enquanto que para a *fibListaInfinita* conseguimos até 5000. No entanto, a função mais eficiente que implementamos seria a * fibLista* que calcula números até aproximadamente 300000.
 > Testando as mesmas funções para o tipo criado no exercício 2, *BigNumber*, chegamos à conclusão que a nossa implementação terá um *runtime* idêntico ao uso de *Integer* e *Int*.
 >
 > Por fim, os testes feitos para chegar a estas conclusões estão apresentados no final do ficheiro *Fib.hs*
