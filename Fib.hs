@@ -11,11 +11,13 @@ fibRec a = fibRec(a-1) + fibRec(a-2)
 
 -- Ex 1.2
 -- CALCULATES FIBONACCI OF ELEMENT N USING LISTS
--- TODO
+--fibLista :: (Integral a) => a -> a
+fibLista n = fibList !! n
+fibList = 0 : 1 : zipWith (+) fibList (tail fibList)
+
 
 -- Ex 1.3
 -- CALCULATES FIBONACCI OF ELEMENT N USING INFINITE LISTS
--- ...
 -- INFINTE LIST
 listaInfinita :: Num n => [n]
 listaInfinita = 0 : nxt
@@ -44,7 +46,7 @@ main = do
   -- 1.1
   print(fibRec 10)
   -- 1.2
-  -- print(fibLista 10)
+  print(fibLista 10)
   -- 1.3
   print(fibListaInfinita 10)
   -- 3.
