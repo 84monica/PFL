@@ -1,0 +1,1 @@
+% O predicado de início de jogo deve ser play/0
