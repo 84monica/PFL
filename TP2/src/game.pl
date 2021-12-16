@@ -12,6 +12,7 @@
 % cordenadas x  y    x  y 
 % +Move -> [[0, 3], [1, 2]]
 move(GameState, Move, NewGameState):-
+                                    % get start and end locations
                                     nth0(0, Move, Start),
                                     nth0(1, Move, End),
                                     % get coordinates of player move
@@ -32,8 +33,8 @@ move(GameState, Move, NewGameState):-
                                     replace(X, GameState, R1, A),
                                     
                                     % replace player move destination with one or two (depending on the player)
-                                    % DEPOIS MUDAR EM FUNÇÃO DO JOGADOR
-                                    replace(Y1, C, 1, C1),
+                                    player(P, true),
+                                    (P == 1 -> replace(Y1, C, 1, C1); replace(Y1, C, 2, C1)),
                                     % replace new row in newGameState
                                     replace(X1, A, C1, NewGameState).
 
