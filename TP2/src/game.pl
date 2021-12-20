@@ -38,13 +38,18 @@ move(GameState, Move, NewGameState):-
                                     % replace new row in newGameState
                                     replace(X1, A, C1, NewGameState).
 
-
-% TO TEST:
 %startBoard(_B), A = [[0, 3], [1, 2]], move(_B, A, X).  
 
-                                    
 % lista de jogadas válidas
 % valid_moves(+GameState, -ListOfMoves)
+valid_moves(GameState, ListOfMoves):-   % check wich player is playing
+                                        player(P, true),
+                                        % iterates board to get possible moves of the current player
+                                        loop(0, 4, GameState, P, ListOfMoves).
+
+%startBoard(_B), valid_moves(_B, X).  
 
 % deteção de final de jogo
 % game_over(+GameState, -Winner)
+
+
