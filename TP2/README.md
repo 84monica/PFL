@@ -12,10 +12,14 @@
 ### Execução de Jogadas
 ### Final do Jogo
 ### Lista de Jogadas Válidas
+### Jogada do Computador
 
 ## Conclusões
 
 ## Bibliografia
+> https://sicstus.sics.se/sicstus/docs/latest4/html/sicstus.html/
+>
+> https://boardgamegeek.com/boardgame/25471/five-field-kono
 
 ### Projeto desenvolvido por:
 > Sofia Teixeira up201806629
