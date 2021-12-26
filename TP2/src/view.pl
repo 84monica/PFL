@@ -1,17 +1,18 @@
 % VISUALIZAÇÃO DO JOGO
 
 :- use_module(library(lists)).
-:- consult('board.pl').
 
 % display_game(+GameState)
-display_game(GameState):- % show board
+display_game(GameState):- % clears previous board
+                          cls,
+                          % show board
                           write('       0   1   2   3   4'),
                           nl,
                           write('     _____________________'),
                           nl, nl,
                           showRow(0, 4, GameState),
                           nl,
-                          write('     _____________________').
+                          write('     _____________________'), nl.
 
 % console clear
 cls :- write('\33\[2J').
@@ -51,7 +52,3 @@ showCol(F, L, R, GameState):- % display player pieces
                             write('   '),
                             write(I)
                             ).
-
-
-
-%startBoard(_B), display_game(_B).

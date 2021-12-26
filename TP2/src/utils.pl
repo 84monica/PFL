@@ -1,5 +1,3 @@
-:- use_module(library(lists)).
-
 % replate element of list
 % replace(+Index, +List, +Element, -NewList)
 replace(I, L, E, K) :-
@@ -48,6 +46,7 @@ possibleMove(GameState, R, I, M):-
                                     nth0(R1, GameState, R2),
                                     nth0(I1, R2, I2),
                                     (I2 == 0 -> 
+                                    % append possible move to List of Moves
                                     append(M, [[[R, I], [R1, I1]]], M1),
                                     write(R),
                                     write(I); write(''));

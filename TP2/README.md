@@ -1,6 +1,9 @@
 # Trabalho Prático 2 - Programação Funcional e em Lógica
 
 ## Instalação e Execução
+### Linux
+### Windows
+
 ## Descrição do jogo - Five Field Kono
 > Five Field Kono é um jogo tradicional Coreano que é jogado por 2 jogadores, cada um com 7 peças, num tabuleiro quadrado de 5x5.
 > Cada peça pode mover-se um quadrado na diagonal, e não há capturas nem saltos. O objetivo do jogo é mover as 7 peças até ao lado contrário do tabuleiro, onde as peças do adversário estavam no inicio do jogo. 
@@ -15,6 +18,8 @@
 ### Jogada do Computador
 
 ## Conclusões
+### Problemas do trabalho desenvolvido
+### Possíveis melhorias
 
 ## Bibliografia
 > https://sicstus.sics.se/sicstus/docs/latest4/html/sicstus.html/
