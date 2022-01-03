@@ -12,6 +12,7 @@ getMove(Move, Player):- write('Player '), write(Player), write(', make your move
                         (IsValid == true -> 
                         process(Input, Move);
                         % if input is invalid ask again for input
+                        write('Invalid Input!\n'),
                         getMove(Move, Player)).
 
 % process information of user input
