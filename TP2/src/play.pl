@@ -6,6 +6,7 @@
 :- consult('game.pl'). % game logic
 :- consult('menus.pl'). % game menus
 :- consult('user.pl'). % user interaction
+:- consult('computer.pl'). % bot
 
 play:-
         % intializes board
@@ -18,12 +19,15 @@ play:-
 gameLoop(Player, GameState):-
                         % display board
                         display_game(GameState),
-                        % makes move
+                        % ask player for move
+                        % if move is invalid ask again
                         getMove(Move, Player), 
+                        % makes move
+                        % and returns new gamestate
                         move(GameState, Player, Move, NewBoard),
-                        % changes player
-                        % returns new gamestate
+                        % changes player and continues loop
                         (Player == 1 ->
                         gameLoop(2, NewBoard);
                         gameLoop(1, NewBoard)).
 
+%consult('/home/monica/Documentos/FEUP/3/1/PFL/PFL/TP2/src/play.pl').

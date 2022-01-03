@@ -36,9 +36,8 @@ move(GameState, Player, Move, NewGameState):-
 
 % lista de jogadas válidas
 % valid_moves(+GameState, +Player, -ListOfMoves)
-valid_moves(GameState, Player, ListOfMoves):-
-                                        % iterates board to get possible moves of the current player
-                                        loop(0, 4, GameState, Player, ListOfMoves).
+% valid_moves(GameState, Player, ListOfMoves):-
+
 % TO TEST
 %startBoard(_B), valid_moves(_B, 1, X).  
 
