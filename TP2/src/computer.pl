@@ -4,9 +4,7 @@
 
 % choose_move(+GameState, +Level, -Move)
 choose_move(GameState, Level, Move):- (Level == 1 ->
-                                        % get valid move list
-
-                                        % random move from valid moves list
+                                        
                                         write('')
                                         ;
                                         % do nothing

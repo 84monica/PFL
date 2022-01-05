@@ -12,26 +12,52 @@ play:-  % shows main menu
         mainMenu,
         read(Input),
 
-        % play with computer
+        % intializes board
+        startBoard(Board),
+
+        % % play with computer
+        % (Input == 1 ->
+        % % starts game loop
+        % computerGameLoop(Board);
+        % write('')),
 
         % play with friend
         (Input == 2 ->
-        % intializes board
-        startBoard(Board), 
         % starts game loop 
         % player 1 plays first 
         gameLoop(1, Board);
-        write('Wrong Input!')).
-        
+        write('')).
+
+% computerGameLoop(GameState):- % display board
+%                                 display_game(GameState),
+%                                 % ask player for move
+%                                 getMove(Move, Player),
+
+%                                 % if move is invalid ask again
+%                                 validateMove(GameState, Player, Move, IsValid),
+%                                 (IsValid == false ->
+%                                 gameLoop(Player, GameState);
+%                                 write('')),
+
+%                                 % makes move and returns new gamestate
+%                                 move(GameState, Player, Move, NewBoard),
+                                
+%                                 % computer move
+%                                 .
 
 gameLoop(Player, GameState):-
                         % display board
                         display_game(GameState),
                         % ask player for move
+                        getMove(Move, Player),
+
                         % if move is invalid ask again
-                        getMove(Move, Player), 
-                        % makes move
-                        % and returns new gamestate
+                        validateMove(GameState, Player, Move, IsValid),
+                        (IsValid == false ->
+                        gameLoop(Player, GameState);
+                        write('')),
+
+                        % makes move and returns new gamestate
                         move(GameState, Player, Move, NewBoard),
                         % changes player and continues loop
                         (Player == 1 ->
