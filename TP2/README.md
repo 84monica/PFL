@@ -96,11 +96,11 @@ endBoard2(
 * Interação com o Jogador
 > As interações com o utilizador estão presentes num outro ficheiro chamado *user.pl*.
 > Nele estão contidos diversos predicados essenciais ao jogo. 
-> 
+
 > O predicado `getMove(-Move, +Player)` recebe o input do utilizador, verificando se está de acordo com o pretendido através do predicado `validateInput(Input, IsValid)`. 
-> 
+
 > Posteriormente vai ser feita uma validação do movimento escolhido pelo utilizador através do predicado `validateMove(GameState, Player, Move, IsValid)`. 
-> 
+
 > Se as condições de validação se verificarem é então processado o input através do predicado `process(Input, Move)`. 
 
 
