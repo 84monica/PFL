@@ -8,12 +8,20 @@
 :- consult('user.pl'). % user interaction
 :- consult('computer.pl'). % bot
 
-play:-
+play:-  % shows main menu
+        mainMenu,
+        read(Input),
+
+        % play with computer
+
+        % play with friend
+        (Input == 2 ->
         % intializes board
         startBoard(Board), 
         % starts game loop 
         % player 1 plays first 
-        gameLoop(1, Board).
+        gameLoop(1, Board);
+        write('Wrong Input!')).
         
 
 gameLoop(Player, GameState):-

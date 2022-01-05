@@ -12,7 +12,7 @@ display_game(GameState):- % clears previous board
                           nl, nl,
                           showRow(0, 4, GameState),
                           nl,
-                          write('     _____________________'), nl.
+                          write('     _____________________'), nl, nl.
 
 % console clear
 cls :- write('\33\[2J').

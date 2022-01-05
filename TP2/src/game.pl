@@ -35,15 +35,64 @@ move(GameState, Player, Move, NewGameState):-
                                         replace(X1, A, C1, NewGameState).
 
 % lista de jogadas válidas
-% valid_moves(+GameState, +Player, -ListOfMoves)
-% valid_moves(GameState, Player, ListOfMoves):-
-
-% TO TEST
-%startBoard(_B), valid_moves(_B, 1, X).  
-
-% valida a jogada feita
-% pesquisa na lista de jogadas válidas e verifica se está presente na mesma
-% validateMove()
+% valid_moves(+GameState, +Player, +Move, -IsValid)
+validateMove(GameState, Player, Move, IsValid):- % get start and end locations
+                                                    nth0(0, Move, Start),
+                                                    nth0(1, Move, End),
+                                                    % get coordinates of player move
+                                                    nth0(0, Start, X),
+                                                    nth0(1, Start, Y),
+                                                    % get coordinates of player move destination
+                                                    nth0(0, End, X1),
+                                                    nth0(1, End, Y1),
+                                                    % get player move
+                                                    nth0(X, GameState, R),
+                                                    nth0(Y, R, I),
+                                                    % get player destination
+                                                    nth0(X1, GameState, C),
+                                                    nth0(Y1, C, I1),
+                                                    % check if move if from player
+                                                    (I == Player ->
+                                                    % check if destination is clear
+                                                    (I1 == 0 ->
+                                                    % possible moves
+                                                    % down right
+                                                    X2 is X+1,
+                                                    Y2 is Y+1,
+                                                    (X2 == X1 ->
+                                                    (Y2 == Y1 ->
+                                                    IsValid = true;
+                                                    write(''));
+                                                    write('')),
+                                                    % down left
+                                                    X3 is X+1,
+                                                    Y3 is Y-1,
+                                                    (X3 == X1 ->
+                                                    (Y3 == Y1 ->
+                                                    IsValid = true;
+                                                    write(''));
+                                                    write('')),
+                                                    % up right
+                                                    X4 is X-1,
+                                                    Y4 is Y+1,
+                                                    (X4 == X1 ->
+                                                    (Y4 == Y1 ->
+                                                    IsValid = true;
+                                                    write(''));
+                                                    write('')),
+                                                    % up left
+                                                    X5 is X-1,
+                                                    Y5 is Y-1,
+                                                    (X5 == X1 ->
+                                                    (Y5 == Y1 ->
+                                                    IsValid = true;
+                                                    write(''));
+                                                    write(''));
+                                                    write(''));
+                                                    write('')),
+                                                    (IsValid \= true ->
+                                                    IsValid = false;
+                                                    write('')).
 
 % deteção de final de jogo
 % game_over(+GameState, -Winner)
