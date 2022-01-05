@@ -6,14 +6,19 @@
 % getMove(-Move, +Player)
 getMove(Move, Player):- write('Player '), write(Player), write(', make your move! (e.g. "03 12".)'), 
                         nl,
+                        write('Press 1 to quit\n'),
                         read(Input),
+                        (Input == 1 ->
+                        % leaves game
+                        % returns funtion with move -1
+                        Move = -1;
                         % check if input is valid
                         validateInput(Input, IsValid),
                         (IsValid == true -> 
                         process(Input, Move);
                         % if input is invalid ask again for input
                         write('Invalid Input!\n'),
-                        getMove(Move, Player)).
+                        getMove(Move, Player))).
 
 % process information of user input
 % transforms input into playable move
@@ -63,7 +68,7 @@ validateInput(Input, IsValid):-
                                     IsValid = false);IsValid = false);IsValid = false);IsValid = false);IsValid = false);IsValid = false);IsValid = false);IsValid = false);IsValid = false);IsValid = false).
 
 % validate user move
-% validateInput(+GameState, +Player, +Move, -IsValid)
+% validateMove(+GameState, +Player, +Move, -IsValid)
 validateMove(GameState, Player, Move, IsValid):- % get start and end locations
                                                 nth0(0, Move, Start),
                                                 nth0(1, Move, End),

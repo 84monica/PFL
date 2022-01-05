@@ -40,6 +40,10 @@ computerGameLoop(GameState):-   % PLAYER MOVE
                                 % ask player for move
                                 getMove(Move, 1),
 
+                                % if player wants to leave game
+                                (Move == -1 ->
+                                write('Player 1 left the game.\n');
+
                                 % if move is invalid ask again
                                 validateMove(GameState, 1, Move, IsValid),
                                 (IsValid == false ->
@@ -55,13 +59,17 @@ computerGameLoop(GameState):-   % PLAYER MOVE
                                 % makes move and returns new gamestate
                                 move(NewBoard, 2, ComputerMove, ComputerNewBoard),
                                 % game loop
-                                computerGameLoop(ComputerNewBoard).
+                                computerGameLoop(ComputerNewBoard)).
 
 gameLoop(Player, GameState):-
                                 % display board
                                 display_game(GameState),
                                 % ask player for move
                                 getMove(Move, Player),
+
+                                % if player wants to leave game
+                                (Move == -1 ->
+                                write('Player '), write(Player), write(' left the game.\n');
 
                                 % if move is invalid ask again
                                 validateMove(GameState, Player, Move, IsValid),
@@ -74,6 +82,6 @@ gameLoop(Player, GameState):-
                                 % changes player and continues loop
                                 (Player == 1 ->
                                 gameLoop(2, NewBoard);
-                                gameLoop(1, NewBoard)).
+                                gameLoop(1, NewBoard))).
 
 %consult('/home/monica/Documentos/FEUP/3/1/PFL/PFL/TP2/src/play.pl').
