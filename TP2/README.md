@@ -81,16 +81,19 @@ endBoard2(
 ### Visualização do estado de jogo
 > Os predicados de visualização do jogo está implementado em diferentes ficheiros, entre os quais os ficheiros *view.pl* e *menus.pl*.
 
+* Menus
 > Os menus implementados estão presentes no ficheiro *menus.pl*.
 > Foram implementados dois menus, um de inicio de jogo e um quando o jogo termina.
 > 
 > A seguir mostramos imagens dos menus que foram implementados.
 > ...
 
+* Visualização do Tabuleiro
 > O predicado de visualização do tabuleiro chama-se `display_game(+GameState)` e está presente no ficheiro *view.pl*.
 > Este predicado é de implementação muito simples. Consiste basicamente em percorrer o Tabuleiro e imprimir os dados do mesmo no ecrã. Este predicado tem como predicados auxiliares `showRow`, `showCol` e `cls`.
 > Os dois primeiros são usados para percorrer o tabuleiro para posteriormente imprimir no ecrã. O terceiro, `cls`, vai fazer um *clean* da consola de modo ao usuário ter uma melhor experiência de jogo.
 
+* Interação com o Jogador
 > As interações com o utilizador estão presentes num outro ficheiro chamado *user.pl*.
 > Nele estão contidos diversos predicados essenciais ao jogo. 
 > 
