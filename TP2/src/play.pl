@@ -15,21 +15,23 @@ play:-  % shows main menu
         % intializes board
         startBoard(Board),
 
-        % play with computer
-        (Input == 1 ->
-        % starts game loop
-        computerGameLoop(Board);
-        write('')),
-
         % play with friend
-        (Input == 2 ->
+        (Input == 1 ->
         % starts game loop 
         % player 1 plays first 
         gameLoop(1, Board);
         write('')),
+
+        % play with computer
+        (Input == 2 ->
+        % starts game loop
+        computerGameLoop(Board);
+        write('')),
         
+        % computer vs computer
+
         % exit
-        (Input == 3 ->
+        (Input == 4 ->
         write('Exiting Game ...');
         write('')).
 
