@@ -2,6 +2,7 @@
 
 ## Instalação e Execução
 ### Linux
+
 Executar o programa *sicstus 4.7.0*.
 
 Executar o comando `consult()` com o caminho absoluto para o ficheiro `src/play.pl`, e de seguida executar o predicado de inicio de jogo através do comando `play.`
@@ -9,15 +10,18 @@ Executar o comando `consult()` com o caminho absoluto para o ficheiro `src/play.
 ### Windows
 
 ## Descrição do jogo - Five Field Kono
+
 Five Field Kono é um jogo tradicional Coreano que é jogado por 2 jogadores, cada um com 7 peças, num tabuleiro quadrado de 5x5.
 
 Cada peça pode mover-se um quadrado na diagonal, e não há capturas nem saltos. O objetivo do jogo é mover as 7 peças até ao lado contrário do tabuleiro, onde as peças do adversário estavam no inicio do jogo. 
 O primeiro jogador a realizar esta tarefa ganha o jogo. 
 
 ## Lógica do Jogo
+
 Nesta secção vai ser explicado detalhadamente a implementação da lógica do jogo *Five Field Kono* em Prolog.
 
 ### Representação interna do estado do jogo
+
 Para a representação poder ser a mais evidente possível para o utilizador, decidimos representar o Jogador 1 pelo carater *1* e o Jogador 2 pelo carater *2*.
 
 Assim sendo os tabuleiros, que são de dimensões 5*5, terão a representação apresentada a seguir:
@@ -80,12 +84,13 @@ endBoard2(
 Estes exemplos de tabuleiros estão também presentes no ficheiro *board.pl*.
 
 ### Visualização do estado de jogo
+
 Os predicados de visualização do jogo estão implementado em diferentes ficheiros, entre os quais os ficheiros *view.pl* e *menus.pl*.
 
 * Menus
 
 Os menus implementados estão presentes no ficheiro *menus.pl*.
-Foram implementados dois menus, um de inicio de jogo e um quando o jogo termina. 
+Foram implementados dois menus, um de inicio de jogo, `mainMenu`, e um quando o jogo termina, `gameOverMenu`. 
 
 O menu de inicio de jogo premite ao utilizador escolher que tipo de jogo pretende fazer. Posto isto, disponibilizamos 3 opções: Jogador vs Jogador, Jogador vs Computador ou Computador vs Computador.
 
@@ -165,16 +170,28 @@ Com o desenvolvimento deste projeto, foi possível desenvolver as nossas compet�
 Consideramos também que o projeto foi bastante interessante de desenvolver.
 
 ### Problemas do trabalho desenvolvido
+
+Nesta secção são discutidos os problemas do trabalho que foi desenvolvido.
+
+Não foi implementado a lista de jogadas válidas, tal como era pedido no enunciado. Fizemos esta decisão por falta de tempo e porque no ficheiro *user.pl* tinhamos já implementado um predicado que verificava se o movimento introduzido pelo utilizador seria válido ou não. Por as razões enunciadas, decidimos não implementar a lista de jogadas válidas.
+
 ### Possíveis melhorias
 
 Uma das possíveis melhorias que poderíamos ter feito ao nosso projeto seria a parte da Jogada de Computador. Por falta de tempo tivemos de nos contentar com a jogada aleatória de nível 1.
 
+Para além disso, uma possível melhoria passa por fazer o jogo mais apelativo ao utilizador, melhorando o display do Tabuleiro e principalmente a forma como o input é processado para o jogo.
+O utilizador para realizar uma jogada terá de inserir inputs da forma, `"00 11".`, o que poderá não ser muito intuitivo para a maioria.
+
+Por fim, em relação às dimensões do Tabuleiro, não foi implementado no nosso trabalho nenhuma *feature* para tornar as dimensões do mesmo configuráveis pelo utilizador.
+
 ## Bibliografia
+
 https://sicstus.sics.se/sicstus/docs/latest4/html/sicstus.html/
 
 https://boardgamegeek.com/boardgame/25471/five-field-kono
 
 ### Projeto desenvolvido por:
+
 Sofia Teixeira up201806629
 
 Mónica Pereira up201905753
