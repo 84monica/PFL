@@ -54,14 +54,25 @@ computerGameLoop(GameState):-   % PLAYER MOVE
 
                                 % makes move and returns new gamestate
                                 move(GameState, 1, Move, NewBoard),
+
+                                % check if player 1 won
+                                game_over(NewBoard, Winner),
+                                (Winner == 1 ->
+                                % call game over menu
+                                gameOverMenu(Winner);
                                 
                                 % COMPUTER MOVE
                                 % PLAYER 2
                                 choose_move(NewBoard, 1, ComputerMove),
                                 % makes move and returns new gamestate
                                 move(NewBoard, 2, ComputerMove, ComputerNewBoard),
+
+                                % check if computer won
+                                game_over(ComputerNewBoard, Winner),
+                                (Winner == 2 ->
+                                gameOverMenu(Winner);
                                 % game loop
-                                computerGameLoop(ComputerNewBoard)).
+                                computerGameLoop(ComputerNewBoard)))).
 
 gameLoop(Player, GameState):-
                                 % display board
@@ -81,9 +92,18 @@ gameLoop(Player, GameState):-
 
                                 % makes move and returns new gamestate
                                 move(GameState, Player, Move, NewBoard),
+
+                                % check if any player won
+                                game_over(NewBoard, Winner),
+                                (Winner == 1 ->
+                                % call game over menu
+                                gameOverMenu(Winner);
+                                (Winner == 2 ->
+                                gameOverMenu(Winner);
+                                % if no player has won then
                                 % changes player and continues loop
                                 (Player == 1 ->
                                 gameLoop(2, NewBoard);
-                                gameLoop(1, NewBoard))).
+                                gameLoop(1, NewBoard))))).
 
 %consult('/home/monica/Documentos/FEUP/3/1/PFL/PFL/TP2/src/play.pl').

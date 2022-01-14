@@ -158,7 +158,9 @@ Fig. 4 - Representação do Tabuleiro antes de ser efetuado o movimento
 Fig. 5 - Representação do Tabuleiro após a execução da uma jogada
 
 ### Final do Jogo
-### Lista de Jogadas Válidas
+
+
+
 ### Jogada do Computador
 
 Em relação ao jogo contra o computador, foi apenas implementado a jogada aleatória, ou seja, o nível um de jogo. 

@@ -35,4 +35,30 @@ move(GameState, Player, Move, NewGameState):-
                                         replace(X1, A, C1, NewGameState).
 
 % deteção de final de jogo
-%game_over(+GameState, -Winner)
+% game_over(+GameState, -Winner)
+game_over(GameState, Winner):- % verifies if player 1 is winner
+                                % get row index 4
+                                nth0(4, GameState, Row),
+                                % check if player 1 pieces are there
+                                (Row == [1, 1, 1, 1, 1] ->
+                                nth0(3, GameState, Row3),
+                                nth0(0, Row3, Item1),
+                                (Item1 == 1 ->
+                                nth0(4, Row3, Item2),
+                                (Item2 == 1 ->
+                                % if conditions are true then player 1 is the winner
+                                Winner = 1;
+                                write('')); write('')); write('')),
+                                %verifies if player 2 is winner
+                                % get row index 0
+                                nth0(0, GameState, Row0),
+                                % check if player 2 pieces are there
+                                (Row0 == [2, 2, 2, 2, 2] ->
+                                nth0(1, GameState, Row1),
+                                nth0(0, Row1, Item3),
+                                (Item3 == 2 ->
+                                nth0(4, Row1, Item4),
+                                (Item4 == 2 ->
+                                % if conditions are true then player 2 is the winner
+                                Winner = 2;
+                                write('')); write('')); write('')).
