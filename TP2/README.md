@@ -9,6 +9,10 @@ Executar o comando `consult()` com o caminho absoluto para o ficheiro `src/play.
 
 ### Windows
 
+Executar o programa *spwin.exe*.
+
+Executar o comando `consult()` com o caminho absoluto para o ficheiro `src/play.pl`, e de seguida executar o predicado de inicio de jogo através do comando `play.`
+
 ## Descrição do jogo - Five Field Kono
 
 Five Field Kono é um jogo tradicional Coreano que é jogado por 2 jogadores, cada um com 7 peças, num tabuleiro quadrado de 5x5.
