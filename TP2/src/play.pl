@@ -29,11 +29,34 @@ play:-  % shows main menu
         write('')),
         
         % computer vs computer
+        (Input == 3 ->
+        computerVsComputerGameLoop(GameState);
+        write('')),
 
         % exit
         (Input == 4 ->
         write('Exiting Game ...');
         write('')).
+
+% computerVsComputerGameLoop(GameState):- display_game(GameState),
+%                                         % COMPUTER MOVE
+%                                         % PLAYER 1
+%                                         choose_move(GameState, 1, Move),
+%                                         % makes move and returns new gamestate
+%                                         move(GameState, 2, Move, NewGameState),
+
+%                                         % check if any player won
+%                                         game_over(NewGameState, Winner),
+%                                         (Winner == 1 ->
+%                                         % call game over menu
+%                                         gameOverMenu(Winner);
+%                                         (Winner == 2 ->
+%                                         gameOverMenu(Winner);
+%                                         % if no player has won then
+%                                         % changes player and continues loop
+%                                         (Player == 1 ->
+%                                         gameLoop(2, NewBoard);
+%                                         gameLoop(1, NewBoard)))).
 
 computerGameLoop(GameState):-   % PLAYER MOVE
                                 % PLAYER 1

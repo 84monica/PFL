@@ -90,7 +90,7 @@ Os predicados de visualização do jogo estão implementado em diferentes fichei
 * Menus
 
 Os menus implementados estão presentes no ficheiro *menus.pl*.
-Foram implementados dois menus, um de inicio de jogo, `mainMenu`, e um quando o jogo termina, `gameOverMenu`. 
+Foram implementados dois menus, um de inicio de jogo, `mainMenu`, e um quando o jogo termina, `gameOverMenu(+Winner)`. 
 
 O menu de inicio de jogo premite ao utilizador escolher que tipo de jogo pretende fazer. Posto isto, disponibilizamos 3 opções: Jogador vs Jogador, Jogador vs Computador ou Computador vs Computador.
 
@@ -159,7 +159,12 @@ Fig. 5 - Representação do Tabuleiro após a execução da uma jogada
 
 ### Final do Jogo
 
+A deteção de final do jogo está presente no ficheiro *game.pl*.
 
+A implementação consiste no seguinte predicado `game_over(+GameState, -Winner)` que verifica se as condições de final de jogo se verificam. O jogo termina quando um dos jogadores tiver as peças na posição inicial do adversário. Temos exemplos de Tabuleiros que representam esta situação de jogo presentes na secção *Representação interna do estado do jogo* deste relatório.
+
+Caso as condições de final de jogo se verifiquem, é chamado o `gameOverMenu(+Winner)`. Esta chamada é feita dentro do *loop* principal do jogo, presente no ficheiro *play.pl*.
+Assim sendo, o jogo é terminado, sendo apenas mostrado este menu.
 
 ### Jogada do Computador
 
