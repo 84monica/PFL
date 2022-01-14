@@ -126,9 +126,12 @@ Nele estão contidos diversos predicados essenciais ao jogo.
 
 O predicado `getMove(-Move, +Player)` recebe o input do utilizador, verificando se está de acordo com o pretendido através do predicado `validateInput(+Input, -IsValid)`. 
 
-Posteriormente vai ser feita uma validação do movimento escolhido pelo utilizador através do predicado `validateMove(+GameState, +Player, +Move, -IsValid)`. 
+O predicado que valida o input, `validateInput(+Input, -IsValid)`, irá verificar se a jogada recebida pelo utilizador está na forma `"00 11".`. Caso seja um input inválido, como `"1111111".`, o jogo irá pedir um novo input ao jogador. Este predicado também verifica se o input fornecido está dentro dos limites do Tabuleiro (5*5), e inputs que não estejam entre 0 e 4 serão também rejeitados. 
 
-Se as condições de validação se verificarem é então processado o input e retornado o movimento através do predicado `process(+Input, -Move)`. 
+Posteriormente vai ser feita uma validação do movimento escolhido pelo utilizador através do predicado `validateMove(+GameState, +Player, +Move, -IsValid)`. Aqui, vai ser verificado se o movimento é possível, ou seja, se a peça pretence ao jogador atual e se o destino da peça está vazio. Também verifica se o movimento é feito uma casa na diagonal.
+
+Se as condições de validação se verificarem é então processado o input e retornado o movimento através do predicado `process(+Input, -Move)`.
+Neste ponto vai ser convertido o input na forma `"00 11".` para uma lista com duas listas de inteiros: `[[0, 0], [1, 1]]`. 
 
 ### Execução de Jogadas
 
@@ -162,7 +165,9 @@ Em relação ao jogo contra o computador, foi apenas implementado a jogada aleat
 
 O código referente à jogada do computador está presente no ficheiro *computer.pl*, e o predicado que calcula e executa a jogada chama-se `choose_move(+GameState, +Level, -Move)`. 
 
-O predicado começa por escolher inteiro aleatórios entre 0 e 4, que são as dimensões do tabuleiro. Posteriormente verifica se a posição encontrada pretence a uma peça do computador, caso não se verifique tenta encontrar outra posição. Caso encontre uma peça que pode ser jogada, é feita outra escolha aleatória para onde a peça se deverá mover.
+O predicado começa por escolher inteiro aleatórios entre 0 e 4, que são as dimensões do tabuleiro. Posteriormente verifica se a posição encontrada pretence a uma peça do computador, caso não se verifique tenta encontrar outra posição. Caso encontre uma peça que pode ser jogada, é feita outra escolha aleatória para onde a peça se deverá mover. 
+
+Posteriormente, é usado o predicado `validateMove(+GameState, +Player, +Move, -IsValid)`, cujo funcionamento já foi descrito na secção *Interação com o Jogador*. Basicamente é verificado se a jogada escolhida aleatóriamente é válida, e caso contrário é pedido novamente um outro movimento.
 
 ## Conclusões
 
@@ -170,8 +175,6 @@ Com o desenvolvimento deste projeto, foi possível desenvolver as nossas compet�
 Consideramos também que o projeto foi bastante interessante de desenvolver.
 
 ### Problemas do trabalho desenvolvido
-
-Nesta secção são discutidos os problemas do trabalho que foi desenvolvido.
 
 Não foi implementado a lista de jogadas válidas, tal como era pedido no enunciado. Fizemos esta decisão por falta de tempo e porque no ficheiro *user.pl* tinhamos já implementado um predicado que verificava se o movimento introduzido pelo utilizador seria válido ou não. Por as razões enunciadas, decidimos não implementar a lista de jogadas válidas.
 
@@ -186,9 +189,11 @@ Por fim, em relação às dimensões do Tabuleiro, não foi implementado no noss
 
 ## Bibliografia
 
-https://sicstus.sics.se/sicstus/docs/latest4/html/sicstus.html/
+[Sicstus](https://sicstus.sics.se/sicstus/docs/latest4/html/sicstus.html/)
 
-https://boardgamegeek.com/boardgame/25471/five-field-kono
+[SWI-Prolog](https://www.swi-prolog.org/)
+
+[Five Field Kono](https://boardgamegeek.com/boardgame/25471/five-field-kono)
 
 ### Projeto desenvolvido por:
 

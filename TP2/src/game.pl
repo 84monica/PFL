@@ -34,8 +34,5 @@ move(GameState, Player, Move, NewGameState):-
                                         % replace new row in newGameState
                                         replace(X1, A, C1, NewGameState).
 
-% lista de jogadas válidas
-% valid_moves(+GameState, +Player, +Move, -IsValid)
-
 % deteção de final de jogo
-% game_over(+GameState, -Winner)
+%game_over(+GameState, -Winner)
