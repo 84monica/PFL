@@ -123,6 +123,10 @@ A seguir é mostrada uma imagem com um exemplo do tabuleiro de jogo.
 
 Fig. 3 - Exemplo de tabuleiro com a informação do jogador atual e com possibilidade de *input* de jogada
 
+![computerVsComputerBoard](prints/computerVsComputerBoard.png)
+
+Fig. 4 - Exemplo de tabuleiro na configuração de jogo *Computer Vs Computer* na qual o utilizador apenas observa o jogo
+
 * Interação com o Jogador
   
 As interações com o utilizador estão presentes num outro ficheiro chamado *user.pl*.

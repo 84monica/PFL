@@ -133,5 +133,3 @@ gameLoop(Player, GameState):-
                                 (Player == 1 ->
                                 gameLoop(2, NewBoard);
                                 gameLoop(1, NewBoard))))).
-
-%consult('/home/monica/Documentos/FEUP/3/1/PFL/PFL/TP2/src/play.pl').
