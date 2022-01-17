@@ -1,6 +1,7 @@
 % PREDICADO PRINCIPAL play/0
 
 :- use_module(library(lists)).
+:- use_module(library(system)).
 :- consult('board.pl'). % board initalization
 :- consult('view.pl'). % board interface
 :- consult('game.pl'). % game logic
@@ -30,7 +31,8 @@ play:-  % shows main menu
         
         % computer vs computer
         (Input == 3 ->
-        computerVsComputerGameLoop(GameState);
+        % playeer 1 plays first
+        computerVsComputerGameLoop(1, Board);
         write('')),
 
         % exit
@@ -38,25 +40,28 @@ play:-  % shows main menu
         write('Exiting Game ...');
         write('')).
 
-% computerVsComputerGameLoop(GameState):- display_game(GameState),
-%                                         % COMPUTER MOVE
-%                                         % PLAYER 1
-%                                         choose_move(GameState, 1, Move),
-%                                         % makes move and returns new gamestate
-%                                         move(GameState, 2, Move, NewGameState),
+computerVsComputerGameLoop(Player, GameState):- display_game(GameState),
+                                                % waiting for move
+                                                write('Waiting for player '), write(Player), write(' to make move ...\n'),
+                                                sleep(2),
 
-%                                         % check if any player won
-%                                         game_over(NewGameState, Winner),
-%                                         (Winner == 1 ->
-%                                         % call game over menu
-%                                         gameOverMenu(Winner);
-%                                         (Winner == 2 ->
-%                                         gameOverMenu(Winner);
-%                                         % if no player has won then
-%                                         % changes player and continues loop
-%                                         (Player == 1 ->
-%                                         gameLoop(2, NewBoard);
-%                                         gameLoop(1, NewBoard)))).
+                                                % COMPUTER MOVE
+                                                choose_move(GameState, 1, Player, Move),
+                                                % makes move and returns new gamestate
+                                                move(GameState, Player, Move, NewGameState),
+
+                                                % check if any player won
+                                                game_over(NewGameState, Winner),
+                                                (Winner == 1 ->
+                                                % call game over menu
+                                                gameOverMenu(Winner);
+                                                (Winner == 2 ->
+                                                gameOverMenu(Winner);
+                                                % if no player has won then
+                                                % changes player and continues loop
+                                                (Player == 1 ->
+                                                computerVsComputerGameLoop(2, NewGameState);
+                                                computerVsComputerGameLoop(1, NewGameState)))).
 
 computerGameLoop(GameState):-   % PLAYER MOVE
                                 % PLAYER 1
@@ -86,7 +91,7 @@ computerGameLoop(GameState):-   % PLAYER MOVE
                                 
                                 % COMPUTER MOVE
                                 % PLAYER 2
-                                choose_move(NewBoard, 1, ComputerMove),
+                                choose_move(NewBoard, 1, 2, ComputerMove),
                                 % makes move and returns new gamestate
                                 move(NewBoard, 2, ComputerMove, ComputerNewBoard),
 

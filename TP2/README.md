@@ -174,7 +174,7 @@ Assim sendo, o jogo é terminado, sendo apenas mostrado este menu.
 
 Em relação ao jogo contra o computador, foi apenas implementado a jogada aleatória, ou seja, o nível um de jogo. 
 
-O código referente à jogada do computador está presente no ficheiro *computer.pl*, e o predicado que calcula e executa a jogada chama-se `choose_move(+GameState, +Level, -Move)`. 
+O código referente à jogada do computador está presente no ficheiro *computer.pl*, e o predicado que calcula e executa a jogada chama-se `choose_move(+GameState, +Level, +Player, -Move)`. 
 
 O predicado começa por escolher inteiro aleatórios entre 0 e 4, que são as dimensões do tabuleiro. Posteriormente verifica se a posição encontrada pretence a uma peça do computador, caso não se verifique tenta encontrar outra posição. Caso encontre uma peça que pode ser jogada, é feita outra escolha aleatória para onde a peça se deverá mover. 
 
